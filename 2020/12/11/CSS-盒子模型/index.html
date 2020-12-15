@@ -16,7 +16,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20201211144813831.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1BPRU1fXw==,size_16,color_FFFFFF,t_70#pic_center">
 <meta property="article:published_time" content="2020-12-11T07:57:58.000Z">
-<meta property="article:modified_time" content="2020-12-11T08:10:40.364Z">
+<meta property="article:modified_time" content="2020-12-15T08:06:59.478Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201211144813831.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1BPRU1fXw==,size_16,color_FFFFFF,t_70#pic_center">
@@ -139,12 +139,12 @@
 <h2 id="盒子的水平布局"><a href="#盒子的水平布局" class="headerlink" title="盒子的水平布局"></a>盒子的水平布局</h2><p>元素的水平方向的布局：(子元素是在父元素的内容区存在的)</p>
 <p>元素在其父元素中水平方向的位置由以下几个属性共同决定：<br>                 margin-left<br>                 border-left<br>                 padding-left<br>                 width<br>                 padding-right<br>                 border-right<br>                 margin-right</p>
 <p>  这七个值中有三个可以设置为auto：<br>                          width<br>                          margin-left<br>                          margin-right</p>
-<p>   一个元素在其父元素中，水平布局必须满足以下等式：<br>   ==margin-left + border-left + padding-left + width + padding-right + border-right + margin-right = 父元素内容区的宽度==</p>
+<p>   一个元素在其父元素中，水平布局必须满足以下等式：<br>   <strong>margin-left + border-left + padding-left + width + padding-right + border-right + margin-right = 父元素内容区的宽度</strong></p>
 <p> eg：0 + 0 + 0 + 200 + 0 + 0 + 0 = 800</p>
 <p>以上等式必须满足，如果相加结果使等式不成立，则称为过度约束，等式会自行调整<br>调整情况:</p>
 <ol>
 <li>如果这七个值中没有为 auto 的情况，则浏览器会自动调整margin-right值以使等式满足。<br>即变为 0 + 0 + 0 + 200 + 0 + 0 + 500 = 800 </li>
-<li>如果某个值为auto 则会自动调整auto的值使等式成立<br> ①如果将一个宽度和一个外边距设置为auto，则宽度会调整到最大，设置为auto的外边距会自动为0；<br> ②如果将外边距都设置为auto，则外边距均为零，宽度最大；<br> ③如果将两个外边距设置为auto，宽度值固定，则会将外边距设置为相同的值</li>
+<li>如果某个值为auto 则会自动调整auto的值使等式成立<br> ①如果将一个宽度和一个外边距设置为auto，则宽度会调整到最大，设置为auto的外边距会自动为0；<br> ②如果将外边距和宽度都设置为auto，则外边距均为零，宽度最大；<br> ③如果将两个外边距设置为auto，宽度值固定，则会将外边距设置为相同的值</li>
 </ol>
 <p>所以我们经常利用这一特点来使一个元素在其父元素中水平居中</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.outer</span>&#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">800px</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">border</span>: <span class="number">10px</span> red solid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-class">.inner</span>&#123;</span><br><span class="line">            <span class="comment">/* width: 200px;</span></span><br><span class="line"><span class="comment">            height: 200px;</span></span><br><span class="line"><span class="comment">            background-color: #bfa; */</span></span><br><span class="line"></span><br><span class="line">            <span class="attribute">width</span>: auto;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">            <span class="attribute">background-color</span>: <span class="number">#bfa</span>;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
