@@ -5,19 +5,21 @@
   
 
   
-  <title>Js——Bom | Hexo</title>
+  <title>Js——BOM | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1.window对象BOM的核心是window对象（是JS的最顶层对象，其他的BOM对象都是window对象的属性），表示浏览器的实例。window对象在浏览器中有两重身份：  一个是ECMAScript中的Global对象 另一个就是浏览器窗口的JavaScript接口  这意味着网页中定义的所有对象、变量和函数都以window作为其Global对象，都可以访问其上定义的parseInt()等全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Js——Bom">
-<meta property="og:url" content="https://example.com/2021/05/03/JS%E2%80%94Bom/index.html">
+<meta property="og:title" content="Js——BOM">
+<meta property="og:url" content="https://example.com/2021/05/09/JS%E2%80%94Bom/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1.window对象BOM的核心是window对象（是JS的最顶层对象，其他的BOM对象都是window对象的属性），表示浏览器的实例。window对象在浏览器中有两重身份：  一个是ECMAScript中的Global对象 另一个就是浏览器窗口的JavaScript接口  这意味着网页中定义的所有对象、变量和函数都以window作为其Global对象，都可以访问其上定义的parseInt()等全">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-03T15:55:36.228Z">
-<meta property="article:modified_time" content="2021-05-03T15:57:01.358Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210506170124171.png#pic_center">
+<meta property="article:published_time" content="2021-05-09T09:23:21.586Z">
+<meta property="article:modified_time" content="2021-05-09T09:24:30.150Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210506170124171.png#pic_center">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -68,8 +70,8 @@
       <div class="outer">
         <section id="main"><article id="post-JS—Bom" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/05/03/JS%E2%80%94Bom/" class="article-date">
-  <time datetime="2021-05-03T15:55:36.228Z" itemprop="datePublished">2021-05-03</time>
+    <a href="/2021/05/09/JS%E2%80%94Bom/" class="article-date">
+  <time datetime="2021-05-09T09:23:21.586Z" itemprop="datePublished">2021-05-09</time>
 </a>
     
   </div>
@@ -80,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Js——Bom
+      Js——BOM
     </h1>
   
 
@@ -166,11 +168,46 @@
 <p>setInterval()方法也会返回一个循环定时ID，可以用于在未来某个时间点上取消循环定时。要取消循环定时，可以调用clearInterval()并传入定时ID。相对于setTimeout()而言，取消定时的能力对setInterval()更加重要。毕竟，如果一直不管它，那么定时任务会一直执行到页面卸载。下面是一个常见的例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">0</span>, intervalId = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> max = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> incrementNumber = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> num++;</span><br><span class="line"> <span class="comment">// 如果达到最大值，则取消所有未执行的任务</span></span><br><span class="line"> <span class="keyword">if</span> (num == max) &#123;</span><br><span class="line"> <span class="built_in">clearInterval</span>(intervalId);</span><br><span class="line"> alert(<span class="string">&quot;Done&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">intervalId = <span class="built_in">setInterval</span>(incrementNumber, <span class="number">500</span>);</span><br></pre></td></tr></table></figure>
 <p>在这个例子中，变量num会每半秒递增一次，直至达到最大限制值。此时循环定时会被取消。</p>
-<h1 id="2-document对象，文档对象；"><a href="#2-document对象，文档对象；" class="headerlink" title="2.document对象，文档对象；"></a>2.document对象，文档对象；</h1><h1 id="3-location对象，浏览器当前URL信息；"><a href="#3-location对象，浏览器当前URL信息；" class="headerlink" title="3.location对象，浏览器当前URL信息；"></a>3.location对象，浏览器当前URL信息；</h1><h1 id="4-navigator对象，浏览器本身信息；"><a href="#4-navigator对象，浏览器本身信息；" class="headerlink" title="4.navigator对象，浏览器本身信息；"></a>4.navigator对象，浏览器本身信息；</h1><h1 id="5-screen对象，客户端屏幕信息；"><a href="#5-screen对象，客户端屏幕信息；" class="headerlink" title="5.screen对象，客户端屏幕信息；"></a>5.screen对象，客户端屏幕信息；</h1><h1 id="6-history对象，浏览器访问历史信息；"><a href="#6-history对象，浏览器访问历史信息；" class="headerlink" title="6.history对象，浏览器访问历史信息；"></a>6.history对象，浏览器访问历史信息；</h1>
+<h1 id="2-document对象，文档对象；"><a href="#2-document对象，文档对象；" class="headerlink" title="2.document对象，文档对象；"></a>2.document对象，文档对象；</h1><h1 id="3-location对象，浏览器当前URL信息；"><a href="#3-location对象，浏览器当前URL信息；" class="headerlink" title="3.location对象，浏览器当前URL信息；"></a>3.location对象，浏览器当前URL信息；</h1><h2 id="3-1-location对象"><a href="#3-1-location对象" class="headerlink" title="3.1 location对象"></a>3.1 location对象</h2><p> location是最有用的BOM对象之一，提供了当前窗口中加载文档的信息，以及通常的导航功能。这个对象独特的地方在于，它既是window的属性，也是document的属性。也就是说，window.location和document.location指向同一个对象。location对象不仅保存着当前加载文档的信息，也保存着把URL解析为离散片段后能够通过属性访问的信息。（就是说location属性用于获取或设置窗体的URL，并且可以用于解析URL）</p>
+<h2 id="3-2-URL"><a href="#3-2-URL" class="headerlink" title="3.2 URL"></a>3.2 URL</h2><p> <strong>URL：</strong>统一资源定位符，是互联网上标准资源的地址。互联网上的每一个文件都有唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎样处理它。</p>
+<h2 id="3-3URL的一般语法格式"><a href="#3-3URL的一般语法格式" class="headerlink" title="3.3URL的一般语法格式"></a>3.3URL的一般语法格式</h2><p><img src="https://img-blog.csdnimg.cn/20210506170124171.png#pic_center" alt="在这里插入图片描述"><br>| 组成 | 说明 |<br>|–|–|<br>| protocol | 通信协议 常用的http，ftp，maito等 |<br>| host | 主机 （域名）  <a target="_blank" rel="noopener" href="http://www.itheima.com/">www.itheima.com</a> |<br>| port | 端口号，可选  省略时使用方案的默认端口 如http的默认端口为80|<br>| path | 路径 由 零或多个‘/’符号隔开的字符串，一般用来表示主机上的一个目录或文件地址|<br>| query | 以键值对的形式，通过 &amp; 符号分隔开来 （？name=andy&amp;age=18） |<br>| fragment | # 后面内容 常见于链接 锚点 |</p>
+<h2 id="3-4-location对象的属性"><a href="#3-4-location对象的属性" class="headerlink" title="3.4 location对象的属性"></a>3.4 location对象的属性</h2><table>
+<thead>
+<tr>
+<th>location对象的属性</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>location.href</td>
+<td>获取或者设置整个URL</td>
+</tr>
+<tr>
+<td>location.host</td>
+<td>返回主机 （域名）<a target="_blank" rel="noopener" href="http://www.itheima.com/">www.itheima.com</a></td>
+</tr>
+<tr>
+<td>location.port</td>
+<td>返回端口号（80）如果未写返回空字符串</td>
+</tr>
+<tr>
+<td>location.pathname</td>
+<td>返回路径</td>
+</tr>
+<tr>
+<td>location.search</td>
+<td>返回参数</td>
+</tr>
+<tr>
+<td>location.hash</td>
+<td>返回片段 #后面的内容 常见于链接 锚点</td>
+</tr>
+</tbody></table>
+<h1 id="4-navigator对象，浏览器本身信息；"><a href="#4-navigator对象，浏览器本身信息；" class="headerlink" title="4.navigator对象，浏览器本身信息；"></a>4.navigator对象，浏览器本身信息；</h1><h1 id="5-screen对象，客户端屏幕信息；"><a href="#5-screen对象，客户端屏幕信息；" class="headerlink" title="5.screen对象，客户端屏幕信息；"></a>5.screen对象，客户端屏幕信息；</h1><h1 id="6-history对象，浏览器访问历史信息；"><a href="#6-history对象，浏览器访问历史信息；" class="headerlink" title="6.history对象，浏览器访问历史信息；"></a>6.history对象，浏览器访问历史信息；</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://example.com/2021/05/03/JS%E2%80%94Bom/" data-id="cko8sdhgd0000coup20jqcy2h" class="article-share-link">Share</a>
+      <a data-url="https://example.com/2021/05/09/JS%E2%80%94Bom/" data-id="cko8sdhgd0000coup20jqcy2h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -219,7 +256,7 @@
       <ul>
         
           <li>
-            <a href="/2021/05/03/JS%E2%80%94Bom/">Js——Bom</a>
+            <a href="/2021/05/09/JS%E2%80%94Bom/">Js——BOM</a>
           </li>
         
           <li>
