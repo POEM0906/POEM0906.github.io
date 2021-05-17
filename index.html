@@ -66,8 +66,8 @@
   
     <article id="post-JS—Bom" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/05/09/JS%E2%80%94Bom/" class="article-date">
-  <time datetime="2021-05-09T09:23:21.586Z" itemprop="datePublished">2021-05-09</time>
+    <a href="/2021/05/17/JS%E2%80%94Bom/" class="article-date">
+  <time datetime="2021-05-17T09:00:42.227Z" itemprop="datePublished">2021-05-17</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/09/JS%E2%80%94Bom/">Js——BOM</a>
+      <a class="article-title" href="/2021/05/17/JS%E2%80%94Bom/">Js——函数</a>
     </h1>
   
 
@@ -199,11 +199,22 @@
 <td>返回片段 #后面的内容 常见于链接 锚点</td>
 </tr>
 </tbody></table>
+<h2 id="3-5（例）-5s之后跳转页面"><a href="#3-5（例）-5s之后跳转页面" class="headerlink" title="3.5（例） 5s之后跳转页面"></a>3.5（例） 5s之后跳转页面</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;button&gt;点击&lt;/button&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line">            <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line">            btn.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//console.log(location.href);</span></span><br><span class="line">                location.href = <span class="string">&#x27;https://www.jd.com/?cu=true&amp;utm_source=sogou-pinzhuan&amp;utm_medium=cpc&amp;utm_campaign=t_288551095_sogoupinzhuan&amp;utm_term=72c3e74a359c48598c6fabe6c1169112_0_8fc3d7f862b54c24af5e6a04b3af0c89&#x27;</span>;</span><br><span class="line">                </span><br><span class="line">            &#125;)</span><br><span class="line">            <span class="keyword">var</span> timer = <span class="number">5</span>;</span><br><span class="line">            <span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(timer == <span class="number">0</span>)&#123;</span><br><span class="line">                    location.href = <span class="string">&#x27;https://www.jd.com/?cu=true&amp;utm_source=sogou-pinzhuan&amp;utm_medium=cpc&amp;utm_campaign=t_288551095_sogoupinzhuan&amp;utm_term=72c3e74a359c48598c6fabe6c1169112_0_8fc3d7f862b54c24af5e6a04b3af0c89&#x27;</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    div.innerHTML = <span class="string">&#x27;您将在&#x27;</span> + timer + <span class="string">&#x27;秒钟之后跳转到首页&#x27;</span>;</span><br><span class="line">                    timer--;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;, <span class="number">1000</span>);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-6获取URL参数"><a href="#3-6获取URL参数" class="headerlink" title="3.6获取URL参数"></a>3.6获取URL参数</h2><p><strong><em>把一个页面中有的数据送到另一个页面中</em></strong></p>
+<ol>
+<li>第一个登录页面,里面有提交表单，action 提交到index.html页面</li>
+<li>第二个页面，可以使用第一个页面的参数,这样实现了-个数据不同页面之间的传递效果</li>
+<li>第二个页面之所以可以使用第一个页面的数据 ,是利用了URL里面的location.search参数</li>
+<li>在第二个页面中,需要把这个参数提取。</li>
+<li>第一步去掉?利用substr</li>
+<li>第二步利用=号分割键和值split( ‘= )</li>
+</ol>
 <h1 id="4-navigator对象，浏览器本身信息；"><a href="#4-navigator对象，浏览器本身信息；" class="headerlink" title="4.navigator对象，浏览器本身信息；"></a>4.navigator对象，浏览器本身信息；</h1><h1 id="5-screen对象，客户端屏幕信息；"><a href="#5-screen对象，客户端屏幕信息；" class="headerlink" title="5.screen对象，客户端屏幕信息；"></a>5.screen对象，客户端屏幕信息；</h1><h1 id="6-history对象，浏览器访问历史信息；"><a href="#6-history对象，浏览器访问历史信息；" class="headerlink" title="6.history对象，浏览器访问历史信息；"></a>6.history对象，浏览器访问历史信息；</h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://example.com/2021/05/09/JS%E2%80%94Bom/" data-id="cko8sdhgd0000coup20jqcy2h" class="article-share-link">Share</a>
+      <a data-url="https://example.com/2021/05/17/JS%E2%80%94Bom/" data-id="cko8sdhgd0000coup20jqcy2h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1026,7 +1037,7 @@
       <ul>
         
           <li>
-            <a href="/2021/05/09/JS%E2%80%94Bom/">Js——BOM</a>
+            <a href="/2021/05/17/JS%E2%80%94Bom/">Js——函数</a>
           </li>
         
           <li>
