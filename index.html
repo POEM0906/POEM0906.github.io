@@ -66,8 +66,8 @@
   
     <article id="post-JS—Bom" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2021/05/17/JS%E2%80%94Bom/" class="article-date">
-  <time datetime="2021-05-17T09:00:42.227Z" itemprop="datePublished">2021-05-17</time>
+    <a href="/2021/05/19/JS%E2%80%94Bom/" class="article-date">
+  <time datetime="2021-05-19T13:47:30.000Z" itemprop="datePublished">2021-05-19</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/17/JS%E2%80%94Bom/">Js——BOM</a>
+      <a class="article-title" href="/2021/05/19/JS%E2%80%94Bom/">JS-BOM</a>
     </h1>
   
 
@@ -164,10 +164,10 @@
 <p>setInterval()方法也会返回一个循环定时ID，可以用于在未来某个时间点上取消循环定时。要取消循环定时，可以调用clearInterval()并传入定时ID。相对于setTimeout()而言，取消定时的能力对setInterval()更加重要。毕竟，如果一直不管它，那么定时任务会一直执行到页面卸载。下面是一个常见的例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">0</span>, intervalId = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> max = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> incrementNumber = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> num++;</span><br><span class="line"> <span class="comment">// 如果达到最大值，则取消所有未执行的任务</span></span><br><span class="line"> <span class="keyword">if</span> (num == max) &#123;</span><br><span class="line"> <span class="built_in">clearInterval</span>(intervalId);</span><br><span class="line"> alert(<span class="string">&quot;Done&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">intervalId = <span class="built_in">setInterval</span>(incrementNumber, <span class="number">500</span>);</span><br></pre></td></tr></table></figure>
 <p>在这个例子中，变量num会每半秒递增一次，直至达到最大限制值。此时循环定时会被取消。</p>
-<h1 id="2-document对象，文档对象；"><a href="#2-document对象，文档对象；" class="headerlink" title="2.document对象，文档对象；"></a>2.document对象，文档对象；</h1><h1 id="3-location对象，浏览器当前URL信息；"><a href="#3-location对象，浏览器当前URL信息；" class="headerlink" title="3.location对象，浏览器当前URL信息；"></a>3.location对象，浏览器当前URL信息；</h1><h2 id="3-1-location对象"><a href="#3-1-location对象" class="headerlink" title="3.1 location对象"></a>3.1 location对象</h2><p> location是最有用的BOM对象之一，提供了当前窗口中加载文档的信息，以及通常的导航功能。这个对象独特的地方在于，它既是window的属性，也是document的属性。也就是说，window.location和document.location指向同一个对象。location对象不仅保存着当前加载文档的信息，也保存着把URL解析为离散片段后能够通过属性访问的信息。（就是说location属性用于获取或设置窗体的URL，并且可以用于解析URL）</p>
+<h1 id="2-location对象，浏览器当前URL信息；"><a href="#2-location对象，浏览器当前URL信息；" class="headerlink" title="2.location对象，浏览器当前URL信息；"></a>2.location对象，浏览器当前URL信息；</h1><h2 id="2-1-location对象"><a href="#2-1-location对象" class="headerlink" title="2.1 location对象"></a>2.1 location对象</h2><p> location是最有用的BOM对象之一，提供了当前窗口中加载文档的信息，以及通常的导航功能。这个对象独特的地方在于，它既是window的属性，也是document的属性。也就是说，window.location和document.location指向同一个对象。location对象不仅保存着当前加载文档的信息，也保存着把URL解析为离散片段后能够通过属性访问的信息。（就是说location属性用于获取或设置窗体的URL，并且可以用于解析URL）</p>
 <h2 id="3-2-URL"><a href="#3-2-URL" class="headerlink" title="3.2 URL"></a>3.2 URL</h2><p> <strong>URL：</strong>统一资源定位符，是互联网上标准资源的地址。互联网上的每一个文件都有唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎样处理它。</p>
-<h2 id="3-3URL的一般语法格式"><a href="#3-3URL的一般语法格式" class="headerlink" title="3.3URL的一般语法格式"></a>3.3URL的一般语法格式</h2><p><img src="https://img-blog.csdnimg.cn/20210506170124171.png#pic_center" alt="在这里插入图片描述"><br>| 组成 | 说明 |<br>|–|–|<br>| protocol | 通信协议 常用的http，ftp，maito等 |<br>| host | 主机 （域名）  <a target="_blank" rel="noopener" href="http://www.itheima.com/">www.itheima.com</a> |<br>| port | 端口号，可选  省略时使用方案的默认端口 如http的默认端口为80|<br>| path | 路径 由 零或多个‘/’符号隔开的字符串，一般用来表示主机上的一个目录或文件地址|<br>| query | 以键值对的形式，通过 &amp; 符号分隔开来 （？name=andy&amp;age=18） |<br>| fragment | # 后面内容 常见于链接 锚点 |</p>
-<h2 id="3-4-location对象的属性"><a href="#3-4-location对象的属性" class="headerlink" title="3.4 location对象的属性"></a>3.4 location对象的属性</h2><table>
+<h2 id="2-2URL的一般语法格式"><a href="#2-2URL的一般语法格式" class="headerlink" title="2.2URL的一般语法格式"></a>2.2URL的一般语法格式</h2><p><img src="https://img-blog.csdnimg.cn/20210506170124171.png#pic_center" alt="在这里插入图片描述"><br>| 组成 | 说明 |<br>|–|–|<br>| protocol | 通信协议 常用的http，ftp，maito等 |<br>| host | 主机 （域名）  <a target="_blank" rel="noopener" href="http://www.itheima.com/">www.itheima.com</a> |<br>| port | 端口号，可选  省略时使用方案的默认端口 如http的默认端口为80|<br>| path | 路径 由 零或多个‘/’符号隔开的字符串，一般用来表示主机上的一个目录或文件地址|<br>| query | 以键值对的形式，通过 &amp; 符号分隔开来 （？name=andy&amp;age=18） |<br>| fragment | # 后面内容 常见于链接 锚点 |</p>
+<h2 id="2-3-location对象的属性"><a href="#2-3-location对象的属性" class="headerlink" title="2.3 location对象的属性"></a>2.3 location对象的属性</h2><table>
 <thead>
 <tr>
 <th>location对象的属性</th>
@@ -199,22 +199,120 @@
 <td>返回片段 #后面的内容 常见于链接 锚点</td>
 </tr>
 </tbody></table>
-<h2 id="3-5（例）-5s之后跳转页面"><a href="#3-5（例）-5s之后跳转页面" class="headerlink" title="3.5（例） 5s之后跳转页面"></a>3.5（例） 5s之后跳转页面</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;button&gt;点击&lt;/button&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line">            <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line">            btn.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//console.log(location.href);</span></span><br><span class="line">                location.href = <span class="string">&#x27;https://www.jd.com/?cu=true&amp;utm_source=sogou-pinzhuan&amp;utm_medium=cpc&amp;utm_campaign=t_288551095_sogoupinzhuan&amp;utm_term=72c3e74a359c48598c6fabe6c1169112_0_8fc3d7f862b54c24af5e6a04b3af0c89&#x27;</span>;</span><br><span class="line">                </span><br><span class="line">            &#125;)</span><br><span class="line">            <span class="keyword">var</span> timer = <span class="number">5</span>;</span><br><span class="line">            <span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(timer == <span class="number">0</span>)&#123;</span><br><span class="line">                    location.href = <span class="string">&#x27;https://www.jd.com/?cu=true&amp;utm_source=sogou-pinzhuan&amp;utm_medium=cpc&amp;utm_campaign=t_288551095_sogoupinzhuan&amp;utm_term=72c3e74a359c48598c6fabe6c1169112_0_8fc3d7f862b54c24af5e6a04b3af0c89&#x27;</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    div.innerHTML = <span class="string">&#x27;您将在&#x27;</span> + timer + <span class="string">&#x27;秒钟之后跳转到首页&#x27;</span>;</span><br><span class="line">                    timer--;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;, <span class="number">1000</span>);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="2-4（例）-5s之后跳转页面"><a href="#2-4（例）-5s之后跳转页面" class="headerlink" title="2.4（例） 5s之后跳转页面"></a>2.4（例） 5s之后跳转页面</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;button&gt;点击&lt;/button&gt;</span><br><span class="line">        &lt;div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line">            <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line">            btn.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//console.log(location.href);</span></span><br><span class="line">                location.href = <span class="string">&#x27;https://www.jd.com/?cu=true&amp;utm_source=sogou-pinzhuan&amp;utm_medium=cpc&amp;utm_campaign=t_288551095_sogoupinzhuan&amp;utm_term=72c3e74a359c48598c6fabe6c1169112_0_8fc3d7f862b54c24af5e6a04b3af0c89&#x27;</span>;</span><br><span class="line">                </span><br><span class="line">            &#125;)</span><br><span class="line">            <span class="keyword">var</span> timer = <span class="number">5</span>;</span><br><span class="line">            <span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(timer == <span class="number">0</span>)&#123;</span><br><span class="line">                    location.href = <span class="string">&#x27;https://www.jd.com/?cu=true&amp;utm_source=sogou-pinzhuan&amp;utm_medium=cpc&amp;utm_campaign=t_288551095_sogoupinzhuan&amp;utm_term=72c3e74a359c48598c6fabe6c1169112_0_8fc3d7f862b54c24af5e6a04b3af0c89&#x27;</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    div.innerHTML = <span class="string">&#x27;您将在&#x27;</span> + timer + <span class="string">&#x27;秒钟之后跳转到首页&#x27;</span>;</span><br><span class="line">                    timer--;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;, <span class="number">1000</span>);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="3-6获取URL参数"><a href="#3-6获取URL参数" class="headerlink" title="3.6获取URL参数"></a>3.6获取URL参数</h2><p><strong><em>把一个页面中有的数据送到另一个页面中</em></strong></p>
+<h2 id="2-5-获取URL参数"><a href="#2-5-获取URL参数" class="headerlink" title="2.5 获取URL参数"></a>2.5 获取URL参数</h2><p><strong><em>把一个页面中有的数据送到另一个页面中</em></strong></p>
 <ol>
 <li>第一个登录页面,里面有提交表单，action 提交到index.html页面</li>
 <li>第二个页面，可以使用第一个页面的参数,这样实现了-个数据不同页面之间的传递效果</li>
 <li>第二个页面之所以可以使用第一个页面的数据 ,是利用了URL里面的location.search参数</li>
 <li>在第二个页面中,需要把这个参数提取。</li>
 <li>第一步去掉?利用substr</li>
-<li>第二步利用=号分割键和值split( ‘= )</li>
+<li>第二步利用=号分割键和值split( ‘=’ )</li>
 </ol>
-<h1 id="4-navigator对象，浏览器本身信息；"><a href="#4-navigator对象，浏览器本身信息；" class="headerlink" title="4.navigator对象，浏览器本身信息；"></a>4.navigator对象，浏览器本身信息；</h1><h1 id="5-screen对象，客户端屏幕信息；"><a href="#5-screen对象，客户端屏幕信息；" class="headerlink" title="5.screen对象，客户端屏幕信息；"></a>5.screen对象，客户端屏幕信息；</h1><h1 id="6-history对象，浏览器访问历史信息；"><a href="#6-history对象，浏览器访问历史信息；" class="headerlink" title="6.history对象，浏览器访问历史信息；"></a>6.history对象，浏览器访问历史信息；</h1>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 登录界面</span></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form action=<span class="string">&quot;2.index.html&quot;</span>&gt;</span><br><span class="line">        用户名：  &lt;input type=<span class="string">&quot;text&quot;</span> name=<span class="string">&quot;uname&quot;</span>&gt;</span><br><span class="line">        &lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;登录&quot;</span>&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="built_in">console</span>.log(location.search); <span class="comment">//?uname=andy</span></span><br><span class="line">        <span class="comment">//1.先去掉？ substr(&#x27;起始的位置&#x27;，截取几个字符);</span></span><br><span class="line">        <span class="keyword">var</span> params = location.search.substr(<span class="number">1</span>);  <span class="comment">//从u开始截取直到最后</span></span><br><span class="line">        <span class="built_in">console</span>.log(params);<span class="comment">//uname=andy</span></span><br><span class="line">        <span class="comment">//2. 利用&#x27;=&#x27;把字符串分割为数组 split(&#x27;=&#x27;);  </span></span><br><span class="line">        <span class="comment">// 因为uname=andy是用=来分割的</span></span><br><span class="line">        <span class="keyword">var</span> arr = params.split(<span class="string">&#x27;=&#x27;</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(arr);</span><br><span class="line">        <span class="comment">//arr[0]是uname;   arr[1]是Andy;</span></span><br><span class="line">        <span class="comment">//用div来写欢迎词</span></span><br><span class="line">        <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span><br><span class="line">        <span class="comment">//3.把数据写入div中</span></span><br><span class="line">        div.innerHTML = arr[<span class="number">1</span>] + <span class="string">&#x27;欢迎您&#x27;</span>;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-6-location常见的方法"><a href="#2-6-location常见的方法" class="headerlink" title="2.6 location常见的方法"></a>2.6 location常见的方法</h3><table>
+<thead>
+<tr>
+<th>location对象方法</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>location.assign()方法</td>
+<td>跟href一样，可以跳转页面(且具有记录浏览历史，所以可以实现后退功能)</td>
+</tr>
+<tr>
+<td>location.replace()方法</td>
+<td>替换当前页面(且不具有记录浏览历史，所以不可以实现后退功能)</td>
+</tr>
+<tr>
+<td>location.reload()方法</td>
+<td>重新加载页面，相当于刷新按钮或者是f5 如果参数为true强制刷新 ctrl+f5</td>
+</tr>
+</tbody></table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button&gt;点击&lt;/button&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line">        btn.addEventListener(<span class="string">&#x27;click&#x27;</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">//1.location.assign()方法 跟href一样，可以跳转页面(且具有记录浏览历史，所以可以实现后退功能)</span></span><br><span class="line">            location.assign(<span class="string">&#x27;https://www.jd.com/?cu=true&amp;utm_source=sogou-pinzhuan&amp;utm_medium=cpc&amp;utm_campaign=t_288551095_sogoupinzhuan&amp;utm_term=72c3e74a359c48598c6fabe6c1169112_0_8fc3d7f862b54c24af5e6a04b3af0c89&#x27;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//2.location.replace()方法 ，替换当前页面(且不具有记录浏览历史，所以不可以实现后退功能)</span></span><br><span class="line">            location.replace(<span class="string">&#x27;https://www.jd.com/?cu=true&amp;utm_source=sogou-pinzhuan&amp;utm_medium=cpc&amp;utm_campaign=t_288551095_sogoupinzhuan&amp;utm_term=72c3e74a359c48598c6fabe6c1169112_0_8fc3d7f862b54c24af5e6a04b3af0c89&#x27;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//3.location.reload()方法，重新加载页面，相当于刷新按钮或者是f5 如果参数为true强制刷新 ctrl+f5</span></span><br><span class="line">            location.reload(<span class="literal">true</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-navigator对象，浏览器本身信息；"><a href="#3-navigator对象，浏览器本身信息；" class="headerlink" title="3.navigator对象，浏览器本身信息；"></a>3.navigator对象，浏览器本身信息；</h1><h2 id="3-1-navigator对象"><a href="#3-1-navigator对象" class="headerlink" title="3.1 navigator对象"></a>3.1 navigator对象</h2><p><strong>navigator对象</strong>包含有关浏览器的信息,它有很多属性,我们最常用的是userAgent ,该属性可以返回由客户机发送服务器的user-agent头部的值。</p>
+<p>下面前端代码可以判断用户那个终端打开页面,实现跳转</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( (navigator. userAgent . match (<span class="regexp">/ (phone | padl pod | iPhone | iPodl | ios | iPad | Android | Mobile | BlackBerry | IEMobile | MQQBrowser | JUC | Fennec | wosBrowser | BrowserNG | Webos| Symbian | windows Phone)/i</span>) )) &#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>. location.href = <span class="string">&quot;&quot;</span>;    <span class="comment">//手机</span></span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>. location.href = <span class="string">&quot;&quot;</span>;  <span class="comment">//电脑</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="3-2-navigator对象的部分属性"><a href="#3-2-navigator对象的部分属性" class="headerlink" title="3.2 navigator对象的部分属性"></a>3.2 navigator对象的部分属性</h2><p>navigator对象实现了NavigatorID、NavigatorLanguage、NavigatorOnLine、NavigatorContentUtils、NavigatorStorage、NavigatorStorageUtils、NavigatorConcurrentHardware 、NavigatorPlugins和NavigatorUserMedia接口定义的属性和方法。</p>
+<p>下表列出了这些接口定义的属性和方法：<br>|属性/方法 | 说明 |<br>|–|–|<br>| appName | 浏览器全名 |<br>| appVersion  | 浏览器版本。通常与实际的浏览器版本不一致 |<br>| connection | 返回暴露Network Information API的NetworkInformation对象 |<br>| deviceMemory |  返回单位为GB的设备内存容量 |<br>| getVRDisplays()  | 返回数组，包含可用的每个VRDisplay实例 |<br>| getUserMedia()  | 返回与可用媒体设备硬件关联的流 |<br>| hardwareConcurrency  | 返回设备的处理器核心数量 |<br>| javaEnabled  | 返回布尔值，表示浏览器是否启用了Java |<br>| languages  | 返回浏览器偏好的语言数组 |<br>| maxTouchPoints  | 返回设备触摸屏支持的最大触点数 |<br>| onLine  | 返回布尔值，表示浏览器是否联网 |<br>| sendBeacon()  | 异步传输一些小数据 |<br>| storage  | 返回暴露Storage API的StorageManager对象 |<br>| webdriver  | 返回浏览器当前是否被自动化程序控制 |</p>
+<p>navigator对象的属性通常用于确定浏览器的类型。</p>
+<h2 id="3-3-注册处理程序"><a href="#3-3-注册处理程序" class="headerlink" title="3.3 注册处理程序"></a>3.3 注册处理程序</h2><p>现代浏览器支持navigator上的（在HTML5中定义的         registerPro -tocolH andler()方法。这个方法可以把一个网站注册为处理某种特定类型信息应用程序。随着在线RSS阅读器和电子邮件客户端的流行，可以借助这个方法将Web应用程序注册为像桌面软件一样的默认应用程序。</p>
+<p>要使用registerProtocolHandler()方法，必须传入3个参数：要处理的协议（如”mailto”（通过该协议可以创建一个指向电子邮件地址的超级链接，通过该链接可以在Internet中发送电子邮件。）或”ftp协议”）、处理该协议的URL，以及应用名称。比如，要把一个Web应用程序注册为默认邮件客户端，可以这样做：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">navigator.registerProtocolHandler(<span class="string">&quot;mailto&quot;</span>,</span><br><span class="line"> <span class="string">&quot;http://www.somemailclient.com?cmd=%s&quot;</span>,</span><br><span class="line"> <span class="string">&quot;Some Mail Client&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>这个例子为”mailto”协议注册了一个处理程序，这样邮件地址就可以通过指定的Web应用程序打开。注意，第二个参数是负责处理请求的URL，%s表示原始的请求。</p>
+<h1 id="4-screen对象，客户端屏幕信息；"><a href="#4-screen对象，客户端屏幕信息；" class="headerlink" title="4.screen对象，客户端屏幕信息；"></a>4.screen对象，客户端屏幕信息；</h1><p>window的另一个属性<strong>screen对象</strong>，是为数不多的几个在编程中很少用的JavaScript对象。这个对象中保存的纯粹是客户端能力信息，也就是浏览器窗口外面的客户端显示器的信息，比如像素宽度和像素高度。每个浏览器都会在screen对象上暴露不同的属性。下表总结了这些属性。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>availHeight</td>
+<td>屏幕像素高度减去系统组件高度（只读）</td>
+</tr>
+<tr>
+<td>availLeft</td>
+<td>没有被系统组件占用的屏幕的最左侧像素（只读）</td>
+</tr>
+<tr>
+<td>availTop</td>
+<td>没有被系统组件占用的屏幕的最顶端像素（只读）</td>
+</tr>
+<tr>
+<td>availWidth</td>
+<td>屏幕像素宽度减去系统组件宽度（只读）</td>
+</tr>
+<tr>
+<td>height</td>
+<td>屏幕像素高度</td>
+</tr>
+<tr>
+<td>left</td>
+<td>当前屏幕左边的像素距离</td>
+</tr>
+<tr>
+<td>top</td>
+<td>当前屏幕顶端的像素距离</td>
+</tr>
+<tr>
+<td>width</td>
+<td>屏幕像素宽度</td>
+</tr>
+<tr>
+<td>orientation</td>
+<td>返回Screen Orientation API中屏幕的朝向</td>
+</tr>
+</tbody></table>
+<h1 id="5-history对象，浏览器访问历史信息；"><a href="#5-history对象，浏览器访问历史信息；" class="headerlink" title="5.history对象，浏览器访问历史信息；"></a>5.history对象，浏览器访问历史信息；</h1><p><strong>history对象</strong>表示当前窗口首次使用以来用户的导航历史记录。因为history是window的属性，所以每个window都有自己的history对象。出于安全考虑，这个对象不会暴露用户访问过的URL，但可以通过它在不知道实际URL的情况下前进和后退。</p>
+<h2 id="5-1-导航"><a href="#5-1-导航" class="headerlink" title="5.1 导航"></a>5.1 导航</h2><p><strong>go()方法</strong>可以在用户历史记录中沿任何方向导航，可以前进也可以后退。这个方法只接收一个参数，这个参数可以是一个整数，表示前进或后退多少步。负值表示在历史记录中后退（类似点击浏览器的“后退”按钮），而正值表示在历史记录中前进（类似点击浏览器的“前进”按钮）。下面来看几个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;a href=<span class="string">&quot;list.html&quot;</span>&gt;点击我去往列表页&lt;/a&gt;</span><br><span class="line">    &lt;button&gt;前进&lt;/button&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;button&#x27;</span>);</span><br><span class="line">        btn.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="comment">// 后退一页</span></span><br><span class="line">			history.go(-<span class="number">1</span>);</span><br><span class="line">			<span class="comment">// 前进一页</span></span><br><span class="line">			history.go(<span class="number">1</span>);</span><br><span class="line">			<span class="comment">// 前进两页</span></span><br><span class="line">			history.go(<span class="number">2</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>在旧版本的一些浏览器中，go()方法的参数也可以是一个字符串，这种情况下浏览器会<strong>导航到历史中包含该字符串的第一个位置</strong>。最接近的位置可能涉及后退，也可能涉及前进。如果历史记录中没有匹配的项，则这个方法什么也不做，如下所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导航到最近的wrox.com页面</span></span><br><span class="line">history.go(<span class="string">&quot;wrox.com&quot;</span>);</span><br><span class="line"><span class="comment">// 导航到最近的nczonline.net页面</span></span><br><span class="line">history.go(<span class="string">&quot;nczonline.net&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>go()有两个简写方法：**back()和forward()**。顾名思义，这两个方法模拟了浏览器的后退按钮和前进按钮：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 后退一页</span></span><br><span class="line">history.back();</span><br><span class="line"><span class="comment">// 前进一页</span></span><br><span class="line">history.forward();</span><br></pre></td></tr></table></figure>
+<p>history对象还有一个<strong>length属性</strong>，表示历史记录中有多个条目。这个属性反映了历史记录的数量，包括可以前进和后退的页面。对于窗口或标签页中加载的第一个页面，history.length等于1。通过以下方法测试这个值，可以确定用户浏览器的起点是不是你的页面：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (history.length == <span class="number">1</span>)&#123;</span><br><span class="line"> <span class="comment">// 这是用户窗口中的第一个页面</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>history对象通常被用于创建“后退”和“前进”按钮，以及确定页面是不是用户历史记录中的第一条记录。</strong></p>
+<h1 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h1><p>浏览器对象模型（BOM，Browser Object Model）是以window对象为基础的，这个对象代表了浏览器窗口和页面可见的区域。window对象也被复用为ECMAScript的Global对象，因此所有全局变量和函数都是它的属性，而且所有原生类型的构造函数和普通函数也都从一开始就存在于这个对象之上。</p>
+<ul>
+<li>要引用其他window对象，可以使用几个不同的窗口指针。</li>
+<li>通过location对象可以以编程方式操纵浏览器的导航系统。通过设置这个对象上的属性，可以改变浏览器URL中的某一部分或全部。</li>
+<li>使用replace()方法可以替换浏览器历史记录中当前显示的页面，并导航到新URL。</li>
+<li>navigator对象提供关于浏览器的信息。提供的信息类型取决于浏览器，不过有些属性如userAgent是所有浏览器都支持的。</li>
+</ul>
+<p>BOM中的另外两个对象也提供了一些功能。screen对象中保存着客户端显示器的信息。这些信息通常用于评估浏览网站的设备信息。history对象提供了操纵浏览器历史记录的能力，开发者可以确定历史记录中包含多少个条目，并以编程方式实现在历史记录中导航，而且也可以修改历史记录。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://example.com/2021/05/17/JS%E2%80%94Bom/" data-id="cko8sdhgd0000coup20jqcy2h" class="article-share-link">Share</a>
+      <a data-url="https://example.com/2021/05/19/JS%E2%80%94Bom/" data-id="cko8sdhgd0000coup20jqcy2h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1037,7 +1135,7 @@
       <ul>
         
           <li>
-            <a href="/2021/05/17/JS%E2%80%94Bom/">Js——BOM</a>
+            <a href="/2021/05/19/JS%E2%80%94Bom/">JS-BOM</a>
           </li>
         
           <li>
